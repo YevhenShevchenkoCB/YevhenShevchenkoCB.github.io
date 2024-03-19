@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Salesforce dev</title>
+<script async src="https://api.beta.glia.com/salemove_integration.js"></script>
+</head>
+<body>
+
+<h1>This is a Glia Salesforce new dev testing page</h1>
+<p>Visitor side.</p>
+
+<form>
+  <label for="visitorName">Name:</label><br>
+  <input type="text" id="visitorName" name="visitorName"><br>
+  <label for="externalId">externalId:</label><br>
+  <input type="text" id="externalId" name="externalId"><br>
+  <label for="customAttrKey">Custom Attribute Key:</label><br>
+  <input type="text" id="customAttrKey" name="customAttrKey"><br>
+  <label for="customAttrValue">Custom Attribute Value:</label><br>
+  <input type="text" id="customAttrValue" name="customAttrValue">
+</form>
+<button onclick="updateVisitor();">Update</button>
+
+<script type="text/javascript">
+function updateVisitor(){
+	sm.getApi({version: 'v1'}).then(function(glia) {
+  
+    var customAttr = {};
+  	customAttr[document.getElementById("customAttrKey").value] = document.getElementById("customAttrValue").value;
+    
+    glia.updateInformation({
+      name: document.getElementById("visitorName").value,
+      externalId: document.getElementById("externalId").value,
+      customAttributes: customAttr
+    }).then(function() {
+      
+    }).catch(function(error) {
+      if (error.cause == glia.ERRORS.NETWORK_TIMEOUT) {
+        
+      } else {
+        
+      }
+    });
+  });
+}
+</script>
+
+</body>
+</html>
