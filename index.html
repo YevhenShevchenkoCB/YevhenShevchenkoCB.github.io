@@ -28,11 +28,9 @@ function updateVisitor(){
   } else {
       console.log('The page is not opened in an iframe.1');
   }
-
-  const targetOrigin = "https://connect-page-6622-dev-ed.scratch.my.salesforce.com";
-  console.log('targetOrigin === ',targetOrigin);
-  window.parent.postMessage("Hello from Iframe 2-1", targetOrigin);
-  window.postMessage("Hello from Iframe 2-2", targetOrigin);
+ console.log('without targer');
+  window.parent.postMessage("Hello from Iframe 2-1");
+  window.postMessage("Hello from Iframe 2-2");
 
 	sm.getApi({version: 'v1'}).then(function(glia) {
   console.log('glia call');
