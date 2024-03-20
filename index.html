@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>This is a Glia Salesforce new dev testing page</h1>
+<h1>This is a Glia Salesforce new dev testing page2</h1>
 <p>Visitor side.</p>
 
 <form>
@@ -19,9 +19,17 @@
   <label for="customAttrValue">Custom Attribute Value:</label><br>
   <input type="text" id="customAttrValue" name="customAttrValue">
 </form>
-<button onclick="updateVisitor();">Update</button>
+<button onclick="sendMessage();">Update</button>
 
 <script type="text/javascript">
+// Function in your iframe's JavaScript
+function sendMessage() {
+    // The message can be any structured data
+    const message = { key: 'value', type: 'example' };
+
+    // Use postMessage to send the message to the parent window
+    window.parent.postMessage(message, 'https://platform-saas-5485-dev-ed.scratch.my.salesforce.com');
+}
 function updateVisitor(){
     if (window.self !== window.top) {
       console.log('The page is opened in an iframe.1');
