@@ -29,7 +29,8 @@ function updateVisitor(){
       console.log('The page is not opened in an iframe.');
   }
 
-  const targetOrigin = "https://connect-page-6622-dev-ed.scratch.my.salesforce.com"; // Замініть це на ваш домен Salesforce
+  const targetOrigin = "https://connect-page-6622-dev-ed.scratch.my.salesforce.com";
+  console.log('targetOrigin === ',targetOrigin);
   window.parent.postMessage("Hello from Iframe 2-1", targetOrigin);
   window.postMessage("Hello from Iframe 2-2", targetOrigin);
 
