@@ -29,9 +29,9 @@ function updateVisitor(){
       console.log('The page is not opened in an iframe.');
   }
 
-  const targetOrigin = "https://connect-page-6622-dev-ed.scratch.lightning.force.com";
+  /*const targetOrigin = "https://connect-page-6622-dev-ed.scratch.lightning.force.com";
   window.parent.postMessage("Hello1", targetOrigin);
-  window.postMessage("Hello2", targetOrigin);
+  window.postMessage("Hello2", targetOrigin);*/
 
 	sm.getApi({version: 'v1'}).then(function(glia) {
   console.log('glia call');
