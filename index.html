@@ -28,7 +28,8 @@ function sendMessage() {
     const message = { key: 'value', type: 'example' };
 
     // Use postMessage to send the message to the parent window
-    window.parent.postMessage(message, 'https://drive-ability-8997.scratch.my.salesforce.com');
+    window.parent.postMessage(message, '*');
+    //window.parent.postMessage(message, 'https://drive-ability-8997.scratch.my.salesforce.com');
 }
 function updateVisitor(){
     if (window.self !== window.top) {
