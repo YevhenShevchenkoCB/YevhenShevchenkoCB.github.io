@@ -31,8 +31,12 @@ function sendMessage() {
     // Use postMessage to send the message to the parent window
     // window.parent.postMessage(message, '*');
 	//...
-    window.parent.postMessage(message, 'https://drive-ability-8997.scratch.lightning.force.com');
+    window.parent.postMessage(message, '*');
 }
+	
+// Automatically send the message every 5 seconds
+setInterval(sendMessage, 5000); // 5000 milliseconds = 5 seconds
+	
 function updateVisitor(){
     if (window.self !== window.top) {
       console.log('The page is opened in an iframe.1');
