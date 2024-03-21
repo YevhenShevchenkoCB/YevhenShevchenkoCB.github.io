@@ -19,7 +19,7 @@
   <label for="customAttrValue">Custom Attribute Value:</label><br>
   <input type="text" id="customAttrValue" name="customAttrValue">
 </form>
-<button onclick="sendMessage();">Update</button>
+<button onclick="updateVisitor();">Update</button>
 
 <script type="text/javascript">
 // Function in your iframe's JavaScript
@@ -38,17 +38,6 @@ function sendMessage() {
 setInterval(sendMessage, 5000); // 5000 milliseconds = 5 seconds
 	
 function updateVisitor(){
-    if (window.self !== window.top) {
-      console.log('The page is opened in an iframe.1');
-  } else {
-      console.log('The page is not opened in an iframe.');
-  }
-
-  /*const targetOrigin = "https://connect-page-6622-dev-ed.scratch.my.salesforce.com";
-  console.log('targetOrigin === ',targetOrigin);
-  window.parent.postMessage("Hello from Iframe 2-1", targetOrigin);
-  window.postMessage("Hello from Iframe 2-2", targetOrigin);*/
-
 	sm.getApi({version: 'v1'}).then(function(glia) {
   console.log('glia call');
     var customAttr = {};
